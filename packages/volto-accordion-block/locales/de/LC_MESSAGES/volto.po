@@ -5,8 +5,308 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: de\n"
+"Language: \n"
 "Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "A short hint that describes the expected value within this block"
+#: components/LayoutSchema
+msgid "A short hint that describes the expected value within this block"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/Edit
+#: components/schema
+#: index
+msgid "Accordion"
+msgstr ""
+
+#. Default: "Accordion Title size"
+#: components/schema
+msgid "Accordion Title size"
+msgstr ""
+
+#. Default: "Accordion block"
+#: components/Edit
+#: components/schema
+msgid "Accordion block"
+msgstr ""
+
+#. Default: "Accordion block settings"
+#: components/LayoutSchema
+msgid "Accordion block settings"
+msgstr ""
+
+#. Default: "Accordion theme"
+#: components/schema
+msgid "Accordion theme"
+msgstr ""
+
+#. Default: "Accordion title"
+#: components/schema
+msgid "Accordion title"
+msgstr ""
+
+#. Default: "Add"
+#: components/Widgets/PanelsWidget
+msgid "Add"
+msgstr ""
+
+#. Default: "Allow multiple panels open at a time"
+#: components/schema
+msgid "Allow multiple panels open at a time"
+msgstr ""
+
+#. Default: "Allow only the following blocks types"
+#: components/LayoutSchema
+msgid "Allow only the following blocks types"
+msgstr ""
+
+#. Default: "Allowed blocks"
+#: components/LayoutSchema
+msgid "Allowed blocks"
+msgstr ""
+
+#. Default: "Collapsed by default"
+#: components/schema
+msgid "Collapsed by default"
+msgstr ""
+
+#. Default: "Default"
+#: components/LayoutSchema
+#: components/schema
+msgid "Default"
+msgstr ""
+
+#. Default: "Detailed expected value within this block"
+#: components/LayoutSchema
+msgid "Detailed expected value within this block"
+msgstr ""
+
+#. Default: "Disable creation of new blocks after this block"
+#: components/LayoutSchema
+msgid "Disable creation of new blocks after this block"
+msgstr ""
+
+#. Default: "Disable drag & drop on this block"
+#: components/LayoutSchema
+msgid "Disable drag & drop on this block"
+msgstr ""
+
+#. Default: "Disable editing on accordion block settings"
+#: components/LayoutSchema
+msgid "Disable editing on accordion block settings"
+msgstr ""
+
+#. Default: "Disable editing on accordion titles"
+#: components/LayoutSchema
+msgid "Disable editing on accordion titles"
+msgstr ""
+
+#. Default: "Disable editing on this block"
+#: components/LayoutSchema
+msgid "Disable editing on this block"
+msgstr ""
+
+#. Default: "Disable inner buttons"
+#: components/LayoutSchema
+msgid "Disable inner buttons"
+msgstr ""
+
+#. Default: "Disable new blocks"
+#: components/LayoutSchema
+msgid "Disable new blocks"
+msgstr ""
+
+#. Default: "Don't allow deletion of this block"
+#: components/LayoutSchema
+msgid "Don't allow deletion of this block"
+msgstr ""
+
+#. Default: "Drag and drop"
+#: components/EditBlockWrapper
+msgid "Drag and drop"
+msgstr ""
+
+#. Default: "Enable filtering"
+#: components/schema
+msgid "Enable filtering"
+msgstr ""
+
+#. Default: "Enter Title"
+#: components/AccordionEdit
+msgid "Enter Title"
+msgstr ""
+
+#. Default: "Fixed layout"
+#: components/LayoutSchema
+msgid "Fixed layout"
+msgstr ""
+
+#. Default: "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
+#: components/LayoutSchema
+msgid "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
+msgstr ""
+
+#. Default: "Fixed position"
+#: components/LayoutSchema
+msgid "Fixed position"
+msgstr ""
+
+#. Default: "Friendly name"
+#: components/schema
+msgid "Friendly name"
+msgstr ""
+
+#. Default: "Heading 2"
+#: components/schema
+msgid "Heading 2"
+msgstr ""
+
+#. Default: "Heading 3"
+#: components/schema
+msgid "Heading 3"
+msgstr ""
+
+#. Default: "Heading 4"
+#: components/schema
+msgid "Heading 4"
+msgstr ""
+
+#. Default: "Heading 5"
+#: components/schema
+msgid "Heading 5"
+msgstr ""
+
+#. Default: "Heading 6"
+#: components/schema
+msgid "Heading 6"
+msgstr ""
+
+#. Default: "Headline"
+#: components/schema
+msgid "Headline"
+msgstr ""
+
+#. Default: "Helper text"
+#: components/LayoutSchema
+msgid "Helper text"
+msgstr ""
+
+#. Default: "Hide all block related buttons within this block"
+#: components/LayoutSchema
+msgid "Hide all block related buttons within this block"
+msgstr ""
+
+#. Default: "Instructions"
+#: components/LayoutSchema
+msgid "Instructions"
+msgstr ""
+
+#. Default: "Non exclusive"
+#: components/schema
+msgid "Non exclusive"
+msgstr ""
+
+#. Default: "Options"
+#: components/schema
+msgid "Options"
+msgstr ""
+
+#. Default: "Primary"
+#: components/schema
+msgid "Primary"
+msgstr ""
+
+#. Default: "Read-only"
+#: components/LayoutSchema
+msgid "Read-only"
+msgstr ""
+
+#. Default: "Read-only settings"
+#: components/LayoutSchema
+msgid "Read-only settings"
+msgstr ""
+
+#. Default: "Read-only titles"
+#: components/LayoutSchema
+msgid "Read-only titles"
+msgstr ""
+
+#. Default: "Remove block"
+#: components/EditBlockWrapper
+msgid "Remove block"
+msgstr ""
+
+#. Default: "Required"
+#: components/LayoutSchema
+msgid "Required"
+msgstr ""
+
+#. Default: "Secondary"
+#: components/schema
+msgid "Secondary"
+msgstr ""
+
+#. Default: "Section friendly name"
+#: components/LayoutSchema
+msgid "Section friendly name"
+msgstr ""
+
+#. Default: "Section help"
+#: components/Edit
+msgid "Section help"
+msgstr ""
+
+#. Default: "Tertiary"
+#: components/schema
+msgid "Tertiary"
+msgstr ""
+
+#. Default: "Theme"
+#: components/schema
+msgid "Theme"
+msgstr ""
+
+#. Default: "Title"
+#: components/LayoutSchema
+#: components/schema
+msgid "Title"
+msgstr ""
+
+#. Default: "Title Icon on the right"
+#: components/schema
+msgid "Title Icon on the right"
+msgstr ""
+
+#. Default: "Title size"
+#: components/schema
+msgid "Title size"
+msgstr ""
+
+#. Default: "Type to filter..."
+#: components/AccordionFilter
+msgid "Type to filter..."
+msgstr ""
+
+#. Default: "Unknown Block {block}"
+#: components/EditBlockWrapper
+msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Add block in position"
+#: components/NewBlockAddButton
+msgid "add_block_in_position"
+msgstr ""
+
+#. Default: "delete"
+#: components/EditBlockWrapper
+msgid "delete"
+msgstr ""
+
+#. Default: "Panel {panel_index}"
+#: components/Widgets/PanelsWidget
+msgid "panel_index"
+msgstr ""
