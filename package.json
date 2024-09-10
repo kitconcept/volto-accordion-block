@@ -1,5 +1,5 @@
 {
-  "name": "@kitconcept/volto-accordion-block-dev",
+  "name": "@kitconcept/volto-accordion-block",
   "version": "1.0.0-alpha.0",
   "description": "volto-accordion-block: Volto add-on that provides a  configurable accordion as a block.",
   "author": "kitconcept GmbH",
