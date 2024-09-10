@@ -1,4 +1,4 @@
-# volto-accordion-block (@kitconcept/volto-accordion-block)
+# Volto Accordion Block
 
 volto-accordion-block: Volto add-on that provides a  configurable accordion as a block.
 
@@ -7,9 +7,17 @@ volto-accordion-block: Volto add-on that provides a  configurable accordion as a
 [![Code analysis checks](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml)
 [![Unit tests](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml)
 
-## Features
+![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
 
-<!-- List your awesome features here -->
+The Volto Accordion Block allows editors to add a configurable accordion to a volto page.
+
+## Screenshot
+
+*Coming soon...*
+
+## Screencast
+
+*Coming soon...*
 
 ## Installation
 
