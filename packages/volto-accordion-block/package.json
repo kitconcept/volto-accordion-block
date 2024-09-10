@@ -1,0 +1,38 @@
+{
+  "name": "@kitconcept/volto-accordion-block",
+  "version": "1.0.0-alpha.0",
+  "description": "volto-accordion-block: Volto add-on that provides a  configurable accordion as a block.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "kitconcept GmbH",
+  "homepage": "https://github.com/kitconcept/volto-accordion-block#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kitconcept/volto-accordion-block.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "release-it": "^17.1.1"
+  }
+}
