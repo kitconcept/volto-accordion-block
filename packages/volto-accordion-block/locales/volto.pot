@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-10T14:30:33.648Z\n"
+"POT-Creation-Date: 2024-10-02T07:58:20.053Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -135,11 +135,6 @@ msgstr ""
 #. Default: "Enable filtering"
 #: components/schema
 msgid "Enable filtering"
-msgstr ""
-
-#. Default: "Enter Title"
-#: components/AccordionEdit
-msgid "Enter Title"
 msgstr ""
 
 #. Default: "Fixed layout"

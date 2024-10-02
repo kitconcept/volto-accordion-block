@@ -135,11 +135,6 @@ msgstr ""
 msgid "Enable filtering"
 msgstr ""
 
-#. Default: "Enter Title"
-#: components/AccordionEdit
-msgid "Enter Title"
-msgstr ""
-
 #. Default: "Fixed layout"
 #: components/LayoutSchema
 msgid "Fixed layout"
