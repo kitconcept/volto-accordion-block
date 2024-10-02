@@ -98,7 +98,7 @@ ci-test: ## Run unit tests in CI
 	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
 
 .PHONY: backend-docker-start
-backend-docker-start:	## Starts a Docker-based backend for development
+backend-docker-start:	## Starts a Docker-based backend for development (in detached mode)
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
 	docker run -d -it --rm --name=backend -p 8080:8080 -e SITE=Plone $(DOCKER_IMAGE)
 
