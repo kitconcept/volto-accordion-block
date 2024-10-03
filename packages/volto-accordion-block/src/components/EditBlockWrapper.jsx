@@ -1,9 +1,6 @@
 import React from 'react';
 import { Icon } from '@plone/volto/components';
-import {
-  blockHasValue,
-  buildStyleClassNamesFromData,
-} from '@plone/volto/helpers';
+import { buildStyleClassNamesFromData } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import includes from 'lodash/includes';
 import isBoolean from 'lodash/isBoolean';
@@ -49,7 +46,6 @@ class EditBlockWrapper extends React.Component {
       blocksConfig,
     } = blockProps;
     const type = data['@type'];
-    const { disableNewBlocks } = data;
     const dragVisible = !data.fixed;
     const visible = selected;
 

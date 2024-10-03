@@ -17,9 +17,8 @@ import React, { useState } from 'react';
 import { Button, Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import AccordionEdit from './AccordionEdit';
-import AccordionFilter from './AccordionFilter';
 import EditBlockWrapper from './EditBlockWrapper';
-import { AccordionBlockSchema } from './Schema';
+import { AccordionBlockSchema } from './schema';
 import { emptyAccordion, getPanels } from './util';
 import config from '@plone/volto/registry';
 
