@@ -19,7 +19,11 @@ const AccordionEdit = (props) => {
   const isActive = activeIndex.includes(index);
 
   const handleClick = (e, itemProps) => {
-    e.stopPropagation();
+    // If the title was clicked, bail out, let the event bubble.
+    if (e.preventToggle) {
+      return;
+    }
+    // Do not stop propagation, bubbling is needed for the editor to select the block.
     const { index } = itemProps;
     if (data.non_exclusive) {
       const newIndex =
@@ -47,6 +51,7 @@ const AccordionEdit = (props) => {
       <div
         className={cx('accordion-title')}
         onClick={(e) => handleClick(e, { index })}
+        onKeyDown={(e) => null}
         role="button"
         tabIndex={0}
         aria-expanded={isActive}
@@ -56,7 +61,9 @@ const AccordionEdit = (props) => {
           value={panel?.title}
           onClick={(e) => {
             handleTitleClick();
-            e.stopPropagation();
+            // Do not stop propagation, bubbling is needed for the editor to select the block.
+            // However mark the event so we ignore the open/close.
+            e.preventToggle = true;
           }}
           onChange={(e) => handleTitleChange(e, [uid, panel])}
         />
