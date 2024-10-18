@@ -88,28 +88,27 @@ const View = (props) => {
   }, [data.collapsed]);
 
   return (
-    <div className={cx('block accordion', className)}>
+    <div className={cx('block accordionBlock', className)}>
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       {panels.map(([id, panel], index) => {
         const isActive = activeIndex.includes(index);
         return accordionBlockHasValue(panel) ? (
-          <div key={id} id={id} className={'accordion-item'}>
+          <div
+            key={id}
+            id={id}
+            className={cx('accordion', isActive ? 'open' : '')}
+          >
             <div
-              className={cx('accordion-title')}
+              className={cx('accordion-header')}
               onClick={() => handleClick({ index, id })}
               onKeyDown={(e) => handleKeyPress(e, index, id)}
               role="button"
               tabIndex={0}
               aria-expanded={isActive}
             >
-              <span>{panel?.title}</span>
-              <Icon
-                className={cx(isActive ? 'open' : '')}
-                name={rightSVG}
-                size="20px"
-              />
+              <div className="accordion-title">{panel?.title}</div>
             </div>
-            <div className={cx('content-wrapper', isActive ? 'open' : '')}>
+            <div className={cx('accordion-body', isActive ? 'open' : '')}>
               <div className="accordion-content">
                 <RenderBlocks
                   {...props}

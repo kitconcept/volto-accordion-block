@@ -7,7 +7,6 @@ import PanelsWidget from './components/Widgets/PanelsWidget';
 // import filterSVG from '@plone/volto/icons/filter.svg';
 // import clearSVG from '@plone/volto/icons/clear.svg';
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
-import './theme/main.less';
 
 const messages = defineMessages({
   accordionTitle: {
