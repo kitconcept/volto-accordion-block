@@ -43,7 +43,9 @@ const AccordionEdit = (props) => {
   };
 
   React.useEffect(() => {
-    return data.collapsed && setActiveIndex([]);
+    if (data.collapsed) {
+      setActiveIndex([]);
+    }
   }, [data.collapsed]);
 
   return (
