@@ -49,33 +49,30 @@ const AccordionEdit = (props) => {
   }, [data.collapsed]);
 
   return (
-    <div className={'accordion-item'}>
+    <div className={cx('accordion', isActive ? 'open' : '')}>
       <div
-        className={cx('accordion-title')}
+        className={cx('accordion-header')}
         onClick={(e) => handleClick(e, { index })}
         onKeyDown={(e) => null}
         role="button"
         tabIndex={0}
         aria-expanded={isActive}
       >
-        <input
-          placeholder="Enter title here..."
-          value={panel?.title}
-          onClick={(e) => {
-            handleTitleClick();
-            // Do not stop propagation, bubbling is needed for the editor to select the block.
-            // However mark the event so we ignore the open/close.
-            e.preventToggle = true;
-          }}
-          onChange={(e) => handleTitleChange(e, [uid, panel])}
-        />
-        <Icon
-          className={cx(isActive ? 'open' : '')}
-          name={rightSVG}
-          size="20px"
-        />
+        <div className="accordion-title">
+          <input
+            placeholder="Enter title here..."
+            value={panel?.title}
+            onClick={(e) => {
+              handleTitleClick();
+              // Do not stop propagation, bubbling is needed for the editor to select the block.
+              // However mark the event so we ignore the open/close.
+              e.preventToggle = true;
+            }}
+            onChange={(e) => handleTitleChange(e, [uid, panel])}
+          />
+        </div>
       </div>
-      <div className={cx('content-wrapper', isActive ? 'open' : '')}>
+      <div className={cx('accordion-body', isActive ? 'open' : '')}>
         <div className="accordion-content">{children}</div>
       </div>
     </div>
