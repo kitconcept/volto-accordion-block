@@ -1,9 +1,11 @@
 import cx from 'classnames';
 import React from 'react';
-import { Icon } from '@plone/volto/components';
+
 import { injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
-import rightSVG from '@plone/volto/icons/right-key.svg';
+
+import { useIntl } from 'react-intl';
+import baseMessages from '@fhnw/messages/base';
 
 const AccordionEdit = (props) => {
   const {
@@ -18,6 +20,7 @@ const AccordionEdit = (props) => {
   const [activeIndex, setActiveIndex] = React.useState([0]);
   const isActive = activeIndex.includes(index);
   const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
+  const intl = useIntl();
 
   const handleClick = (e, itemProps) => {
     // // If the title was clicked, bail out, let the event bubble.
@@ -58,6 +61,11 @@ const AccordionEdit = (props) => {
         role="button"
         tabIndex={0}
         aria-expanded={isActive}
+        title={
+          isActive
+            ? intl.formatMessage(baseMessages.Open)
+            : intl.formatMessage(baseMessages.Close)
+        }
       >
         <div className="accordion-title">
           <input

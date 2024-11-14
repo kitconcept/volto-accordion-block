@@ -1,11 +1,23 @@
 import accordionSVG from '@plone/volto/icons/circle-bottom.svg';
+import imagesSVG from '@plone/volto/icons/images.svg';
+import TestimonialIcon from '@plone/volto/icons/quote.svg';
 import Edit from './components/Edit';
 import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
-//import filterSVG from '@plone/volto/icons/filter.svg';
-// import clearSVG from '@plone/volto/icons/clear.svg';
+import { ImageSliderDataAdapter } from 'volto-fhnw-web25-base/components/ImageSlider/adapter';
+import ImageSliderEdit from 'volto-fhnw-web25-base/components/ImageSlider/Edit';
+import ImageSliderView from 'volto-fhnw-web25-base/components/ImageSlider/View';
+import {
+  NewsletterView,
+  NewsletterEdit,
+  newsletterSVG,
+} from 'volto-fhnw-web25-base/components/Blocks/Newsletter';
+import {
+  TestimonialsView,
+  TestimonialsEdit,
+} from 'volto-fhnw-web25-base/components/Blocks/Testimonial';
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -32,12 +44,12 @@ const extendedSchema = (config) => {
         return false;
       } else {
         const title = config.blocks.blocksConfig[key]?.title || key;
-        return [key, title];
+        return key;
       }
     })
     .filter((val) => !!val);
 
-  choices.push(['accordion', intl.formatMessage(messages.accordionTitle)]);
+  // choices.push(['accordion', intl.formatMessage(messages.accordionTitle)]);
   const accordionLayoutSchema = layoutSchema(intl);
 
   return {
@@ -55,7 +67,7 @@ const extendedSchema = (config) => {
 };
 
 const applyConfig = (config) => {
-  console.log(config.blocks.blocksConfig);
+  console.log('blocksconfigdata', config.blocks.blocksConfig);
   config.widgets.type.panels = PanelsWidget;
   config.blocks.blocksConfig.accordion = {
     id: 'accordion',
@@ -81,6 +93,40 @@ const applyConfig = (config) => {
       addPermission: [],
       view: [],
     },
+  };
+  config.blocks.blocksConfig.newsletter = {
+    id: 'newsletter',
+    title: 'Newsletter (CleverReach)',
+    icon: newsletterSVG,
+    group: 'content',
+    view: NewsletterView,
+    edit: NewsletterEdit,
+    restricted: false,
+    mostUsed: false,
+  };
+  config.blocks.blocksConfig.testimonial = {
+    id: 'testimonial',
+    title: 'Testimonial',
+    icon: TestimonialIcon,
+    group: 'content',
+    view: TestimonialsView,
+    edit: TestimonialsEdit,
+    restricted: false,
+    sidebarTab: 1,
+    enableStyling: false,
+  };
+  config.blocks.blocksConfig.imageslider = {
+    id: 'imageslider',
+    title: 'Bildergalerie',
+    icon: imagesSVG,
+    group: 'media',
+    view: ImageSliderView,
+    edit: ImageSliderEdit,
+    dataAdapter: ImageSliderDataAdapter,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    enableStyling: false,
   };
   return config;
 };

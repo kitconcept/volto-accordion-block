@@ -3,9 +3,10 @@ import { getPanels, accordionBlockHasValue } from './util';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { useLocation, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-import { RenderBlocks, Icon } from '@plone/volto/components';
+import { RenderBlocks } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import rightSVG from '@plone/volto/icons/right-key.svg';
+import { defineMessages, useIntl } from 'react-intl';
+import baseMessages from '@fhnw/messages/base';
 
 const useQuery = (location) => {
   const { search } = location;
@@ -14,6 +15,7 @@ const useQuery = (location) => {
 
 const View = (props) => {
   const { data, className } = props;
+  const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
   const panels = getPanels(data.data);
@@ -103,9 +105,13 @@ const View = (props) => {
               className={cx('accordion-header')}
               onClick={() => handleClick({ index, id })}
               onKeyDown={(e) => handleKeyPress(e, index, id)}
-              role="button"
               tabIndex={0}
               aria-expanded={isActive}
+              title={
+                isActive
+                  ? intl.formatMessage(baseMessages.Open)
+                  : intl.formatMessage(baseMessages.Close)
+              }
             >
               <div className="accordion-title">{panel?.title}</div>
             </div>

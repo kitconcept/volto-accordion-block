@@ -17,7 +17,6 @@ const addonAliases = Object.keys(registry.packages).map((o) => [
   o,
   registry.packages[o].modulePath,
 ]);
-
 module.exports = {
   extends: `${coreLocation}/packages/volto/.eslintrc`,
   rules: {
@@ -30,13 +29,12 @@ module.exports = {
           ['@plone/volto', `${coreLocation}/packages/volto/src`],
           ['@plone/volto-slate', `${coreLocation}/packages/volto-slate/src`],
           ['@plone/registry', `${coreLocation}/packages/registry/src`],
+          ['volto-fhnw-web25-base', '../packages/volto-fhnw-web25-base/src'],
           [
             '@kitconcept/volto-accordion-block',
             './packages/volto-accordion-block/src',
           ],
-          //change
-          ['volto-fhnw-web25-base', './packages/volto-fhnw-web25-base/src'],
-          ['@fhnw', `./packages/volto-fhnw-web25-base/src`],
+
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
