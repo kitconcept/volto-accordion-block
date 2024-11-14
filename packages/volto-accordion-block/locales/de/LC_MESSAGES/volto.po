@@ -21,7 +21,7 @@ msgstr ""
 #: components/schema
 #: index
 msgid "Accordion"
-msgstr ""
+msgstr "Akkordeon"
 
 #. Default: "Accordion Title size"
 #: components/schema
@@ -32,7 +32,7 @@ msgstr ""
 #: components/Edit
 #: components/schema
 msgid "Accordion block"
-msgstr ""
+msgstr "Akkordeon block"
 
 #. Default: "Accordion block settings"
 #: components/LayoutSchema

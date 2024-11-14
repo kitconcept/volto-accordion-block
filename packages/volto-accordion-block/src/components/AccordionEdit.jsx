@@ -2,7 +2,7 @@ import cx from 'classnames';
 import React from 'react';
 import { Icon } from '@plone/volto/components';
 import { injectIntl } from 'react-intl';
-
+import config from '@plone/volto/registry';
 import rightSVG from '@plone/volto/icons/right-key.svg';
 
 const AccordionEdit = (props) => {
@@ -17,15 +17,16 @@ const AccordionEdit = (props) => {
   } = props;
   const [activeIndex, setActiveIndex] = React.useState([0]);
   const isActive = activeIndex.includes(index);
+  const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
 
   const handleClick = (e, itemProps) => {
-    // If the title was clicked, bail out, let the event bubble.
+    // // If the title was clicked, bail out, let the event bubble.
     if (e.preventToggle) {
       return;
     }
-    // Do not stop propagation, bubbling is needed for the editor to select the block.
+    // // Do not stop propagation, bubbling is needed for the editor to select the block.
     const { index } = itemProps;
-    if (data.non_exclusive) {
+    if (non_exclusive) {
       const newIndex =
         activeIndex.indexOf(index) === -1
           ? [...activeIndex, index]

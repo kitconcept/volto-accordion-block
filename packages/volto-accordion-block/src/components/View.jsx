@@ -4,7 +4,7 @@ import { withBlockExtensions } from '@plone/volto/helpers';
 import { useLocation, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { RenderBlocks, Icon } from '@plone/volto/components';
-
+import config from '@plone/volto/registry';
 import rightSVG from '@plone/volto/icons/right-key.svg';
 
 const useQuery = (location) => {
@@ -18,9 +18,10 @@ const View = (props) => {
   const history = useHistory();
   const panels = getPanels(data.data);
   const metadata = props.metadata || props.properties;
+  const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
 
-  const [activeIndex, setActiveIndex] = React.useState([]);
-  const [activePanel, setActivePanel] = React.useState([]);
+  const [activeIndex, setActiveIndex] = React.useState([0]);
+  const [activePanel, setActivePanel] = React.useState([0]);
 
   const query = useQuery(location);
   const activePanels = query.get('activeAccordion')?.split(',');
@@ -44,14 +45,14 @@ const View = (props) => {
     const { index, id } = itemProps;
     const newIndex =
       activeIndex.indexOf(index) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activeIndex, index]
           : [index]
         : activeIndex.filter((item) => item !== index);
 
     const newPanel =
       activePanel.indexOf(id) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activePanel, id]
           : [id]
         : activePanel.filter((item) => item !== id);
