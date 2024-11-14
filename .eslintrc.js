@@ -34,6 +34,9 @@ module.exports = {
             '@kitconcept/volto-accordion-block',
             './packages/volto-accordion-block/src',
           ],
+          //change
+          ['volto-fhnw-web25-base', './packages/volto-fhnw-web25-base/src'],
+          ['@fhnw', `./packages/volto-fhnw-web25-base/src`],
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
