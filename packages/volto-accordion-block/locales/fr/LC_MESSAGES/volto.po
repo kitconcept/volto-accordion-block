@@ -73,7 +73,7 @@ msgstr ""
 #: components/AccordionEdit
 #: components/View
 msgid "Close"
-msgstr ""
+msgstr "Afficher plus d'informations"
 
 #. Default: "Collapsed by default"
 #: components/schema
@@ -215,7 +215,7 @@ msgstr ""
 #: components/AccordionEdit
 #: components/View
 msgid "Open"
-msgstr ""
+msgstr "Afficher moins d'informations"
 
 #. Default: "Options"
 #: components/schema

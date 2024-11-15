@@ -4,8 +4,18 @@ import React from 'react';
 import { injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 
-import { useIntl } from 'react-intl';
-import baseMessages from '@fhnw/messages/base';
+import { defineMessages, useIntl } from 'react-intl';
+
+const messages = defineMessages({
+  Open: {
+    id: 'Open',
+    defaultMessage: 'Show less information',
+  },
+  Close: {
+    id: 'Close',
+    defaultMessage: 'Show more information',
+  },
+});
 
 const AccordionEdit = (props) => {
   const {
@@ -63,8 +73,8 @@ const AccordionEdit = (props) => {
         aria-expanded={isActive}
         title={
           isActive
-            ? intl.formatMessage(baseMessages.Open)
-            : intl.formatMessage(baseMessages.Close)
+            ? intl.formatMessage(messages.Open)
+            : intl.formatMessage(messages.Close)
         }
       >
         <div className="accordion-title">

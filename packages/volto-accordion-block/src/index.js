@@ -67,7 +67,6 @@ const extendedSchema = (config) => {
 };
 
 const applyConfig = (config) => {
-  console.log('blocksconfigdata', config.blocks.blocksConfig);
   config.widgets.type.panels = PanelsWidget;
   config.blocks.blocksConfig.accordion = {
     id: 'accordion',
@@ -94,6 +93,9 @@ const applyConfig = (config) => {
       view: [],
     },
   };
+
+  //Allowed blocks inside the accordion block.
+  //Newsletter
   config.blocks.blocksConfig.newsletter = {
     id: 'newsletter',
     title: 'Newsletter (CleverReach)',
@@ -104,6 +106,7 @@ const applyConfig = (config) => {
     restricted: false,
     mostUsed: false,
   };
+  //Testimonial
   config.blocks.blocksConfig.testimonial = {
     id: 'testimonial',
     title: 'Testimonial',
@@ -115,6 +118,7 @@ const applyConfig = (config) => {
     sidebarTab: 1,
     enableStyling: false,
   };
+  //ImageSlider
   config.blocks.blocksConfig.imageslider = {
     id: 'imageslider',
     title: 'Bildergalerie',

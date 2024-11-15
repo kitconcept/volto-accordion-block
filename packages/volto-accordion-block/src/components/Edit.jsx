@@ -281,22 +281,18 @@ const Edit = (props) => {
     'teaser',
     'pdf_viewer',
     'form',
-    //not able to add
-    'imageslider', //blocks
-    'testimonial', //blocks
-    'newsletter', //blocks
+    'imageslider',
+    'testimonial',
+    'newsletter',
   ];
   const blockConfig = config.blocks.blocksConfig.accordion;
   const blocksConfig = blockConfig.blocksConfig || props.blocksConfig;
   // The accordion is able to get the allowedBlocks info from the custom DX layout
   // Fallback to the blockConfig one
-  console.log(blockConfig.schema.properties.allowedBlocks.items.choices);
   const allowedBlocks = data.allowedBlocks || allowedBlock;
-  console.log('hj', blockConfig.allowedBlocks);
   const allowedBlocksConfig = allowedBlocks
     ? pickBy(blocksConfig, (value, key) => allowedBlocks.includes(key))
     : blocksConfig;
-  console.log('edit', allowedBlocksConfig);
   const schema = AccordionBlockSchema({ intl });
 
   return (

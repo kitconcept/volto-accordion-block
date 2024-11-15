@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-10-02T07:58:20.053Z\n"
+"POT-Creation-Date: 2024-11-15T08:23:24.184Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -69,6 +69,12 @@ msgstr ""
 #. Default: "Allowed blocks"
 #: components/LayoutSchema
 msgid "Allowed blocks"
+msgstr ""
+
+#. Default: "Show more information"
+#: components/AccordionEdit
+#: components/View
+msgid "Close"
 msgstr ""
 
 #. Default: "Collapsed by default"
@@ -205,6 +211,12 @@ msgstr ""
 #. Default: "Non exclusive"
 #: components/schema
 msgid "Non exclusive"
+msgstr ""
+
+#. Default: "Show less information"
+#: components/AccordionEdit
+#: components/View
+msgid "Open"
 msgstr ""
 
 #. Default: "Options"

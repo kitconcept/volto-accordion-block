@@ -6,12 +6,22 @@ import cx from 'classnames';
 import { RenderBlocks } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
-import baseMessages from '@fhnw/messages/base';
+// import baseMessages from '@fhnw/messages/base';
 
 const useQuery = (location) => {
   const { search } = location;
   return React.useMemo(() => new URLSearchParams(search), [search]);
 };
+const messages = defineMessages({
+  Open: {
+    id: 'Open',
+    defaultMessage: 'Show less information',
+  },
+  Close: {
+    id: 'Close',
+    defaultMessage: 'Show more information',
+  },
+});
 
 const View = (props) => {
   const { data, className } = props;
@@ -109,8 +119,8 @@ const View = (props) => {
               aria-expanded={isActive}
               title={
                 isActive
-                  ? intl.formatMessage(baseMessages.Open)
-                  : intl.formatMessage(baseMessages.Close)
+                  ? intl.formatMessage(messages.Open)
+                  : intl.formatMessage(messages.Close)
               }
             >
               <div className="accordion-title">{panel?.title}</div>
