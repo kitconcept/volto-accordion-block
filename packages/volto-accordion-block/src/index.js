@@ -49,7 +49,7 @@ const extendedSchema = (config) => {
     })
     .filter((val) => !!val);
 
-  // choices.push(['accordion', intl.formatMessage(messages.accordionTitle)]);
+  choices.push(['accordion', intl.formatMessage(messages.accordionTitle)]);
   const accordionLayoutSchema = layoutSchema(intl);
   console.log(choices);
   return {
