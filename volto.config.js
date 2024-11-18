@@ -1,4 +1,4 @@
-const addons = ['@kitconcept/volto-accordion-block' ,'@fhnw'];
+const addons = ['@kitconcept/volto-accordion-block'];
 const theme = '';
 
 module.exports = {
