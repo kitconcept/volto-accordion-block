@@ -278,9 +278,7 @@ const Edit = (props) => {
   const allowedBlocksConfig = allowedBlocks
     ? pickBy(blocksConfig, (value, key) => allowedBlocks.includes(key))
     : blocksConfig;
-
   const schema = AccordionBlockSchema({ intl });
-
   return (
     <>
       {data.headline && <h2 className="headline">{data.headline}</h2>}

@@ -1,11 +1,10 @@
-import accordionSVG from '@plone/volto/icons/list-arrows.svg';
+import accordionSVG from '@plone/volto/icons/circle-bottom.svg';
 import Edit from './components/Edit';
 import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
-// import filterSVG from '@plone/volto/icons/filter.svg';
-// import clearSVG from '@plone/volto/icons/clear.svg';
+
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -67,6 +66,7 @@ const applyConfig = (config) => {
     mostUsed: false,
     blockHasOwnFocusManagement: true,
     sidebarTab: 1,
+    non_exclusive: true,
     schema: extendedSchema(config),
     schemaEnhancer: AccordionStylingSchema,
     // See https://react.semantic-ui.com/modules/accordion/

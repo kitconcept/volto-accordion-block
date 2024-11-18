@@ -76,6 +76,12 @@ msgstr ""
 msgid "Allowed blocks"
 msgstr ""
 
+#. Default: "Show more information"
+#: components/AccordionEdit
+#: components/View
+msgid "Close"
+msgstr ""
+
 #. Default: "Collapsed by default"
 #: components/schema
 msgid "Collapsed by default"
@@ -210,6 +216,12 @@ msgstr ""
 #. Default: "Non exclusive"
 #: components/schema
 msgid "Non exclusive"
+msgstr ""
+
+#. Default: "Show less information"
+#: components/AccordionEdit
+#: components/View
+msgid "Open"
 msgstr ""
 
 #. Default: "Options"

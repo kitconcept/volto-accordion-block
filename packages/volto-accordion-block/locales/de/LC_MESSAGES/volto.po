@@ -21,7 +21,7 @@ msgstr ""
 #: components/schema
 #: index
 msgid "Accordion"
-msgstr ""
+msgstr "Akkordeon"
 
 #. Default: "Accordion Title size"
 #: components/schema
@@ -32,7 +32,7 @@ msgstr ""
 #: components/Edit
 #: components/schema
 msgid "Accordion block"
-msgstr ""
+msgstr "Akkordeon block"
 
 #. Default: "Accordion block settings"
 #: components/LayoutSchema
@@ -68,6 +68,12 @@ msgstr ""
 #: components/LayoutSchema
 msgid "Allowed blocks"
 msgstr ""
+
+#. Default: "Show more information"
+#: components/AccordionEdit
+#: components/View
+msgid "Close"
+msgstr "Weitere Informationen anzeigen"
 
 #. Default: "Collapsed by default"
 #: components/schema
@@ -204,6 +210,12 @@ msgstr ""
 #: components/schema
 msgid "Non exclusive"
 msgstr ""
+
+#. Default: "Show less information"
+#: components/AccordionEdit
+#: components/View
+msgid "Open"
+msgstr "Weniger Informationen anzeigen"
 
 #. Default: "Options"
 #: components/schema
