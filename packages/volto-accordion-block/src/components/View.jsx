@@ -6,7 +6,6 @@ import cx from 'classnames';
 import { RenderBlocks } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
-// import baseMessages from '@fhnw/messages/base';
 
 const useQuery = (location) => {
   const { search } = location;
@@ -115,6 +114,7 @@ const View = (props) => {
               className={cx('accordion-header')}
               onClick={() => handleClick({ index, id })}
               onKeyDown={(e) => handleKeyPress(e, index, id)}
+              role="button"
               tabIndex={0}
               aria-expanded={isActive}
               title={

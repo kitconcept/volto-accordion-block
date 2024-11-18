@@ -19,7 +19,7 @@ import {
   TestimonialsEdit,
 } from 'volto-fhnw-web25-base/components/Blocks/Testimonial';
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
-import { cloneDeep } from 'lodash';
+
 const messages = defineMessages({
   accordionTitle: {
     id: 'Accordion',
@@ -51,7 +51,7 @@ const extendedSchema = (config) => {
 
   choices.push(['accordion', intl.formatMessage(messages.accordionTitle)]);
   const accordionLayoutSchema = layoutSchema(intl);
-  console.log(choices);
+
   return {
     ...accordionLayoutSchema,
     properties: {
@@ -69,7 +69,6 @@ const extendedSchema = (config) => {
 const applyConfig = (config) => {
   config.widgets.type.panels = PanelsWidget;
   config.blocks.blocksConfig.accordion = {
-    ...config.blocks.blocksConfig.accordion,
     id: 'accordion',
     title: intl.formatMessage(messages.accordionTitle),
     icon: accordionSVG,

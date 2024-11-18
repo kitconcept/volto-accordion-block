@@ -12,7 +12,7 @@ import {
 } from '@plone/volto/helpers';
 import { cloneDeepSchema } from '@plone/volto/helpers/Utils/Utils';
 import helpSVG from '@plone/volto/icons/help.svg';
-import { isEmpty, without, pickBy, omitBy } from 'lodash';
+import { isEmpty, without, omitBy } from 'lodash';
 import React, { useState } from 'react';
 import { Button, Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
