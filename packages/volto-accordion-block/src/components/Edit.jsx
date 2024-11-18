@@ -12,7 +12,7 @@ import {
 } from '@plone/volto/helpers';
 import { cloneDeepSchema } from '@plone/volto/helpers/Utils/Utils';
 import helpSVG from '@plone/volto/icons/help.svg';
-import { isEmpty, without, omitBy } from 'lodash';
+import { isEmpty, without, pickBy } from 'lodash';
 import React, { useState } from 'react';
 import { Button, Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
@@ -269,24 +269,15 @@ const Edit = (props) => {
     });
   };
 
-  //Restricted Blocks
-  const restricted = [
-    'accordion',
-    'gridBlock',
-    'introduction',
-    'maps',
-    'toc',
-    'slider',
-    'schemaForm',
-    'group',
-  ];
   const blockConfig = config.blocks.blocksConfig.accordion;
   const blocksConfig = blockConfig.blocksConfig || props.blocksConfig;
   // The accordion is able to get the allowedBlocks info from the custom DX layout
   // Fallback to the blockConfig one
-  const allowedBlocksConfig = omitBy(blocksConfig, (value, key) =>
-    restricted.includes(key),
-  );
+  const allowedBlocks = data.allowedBlocks || blockConfig.allowedBlocks;
+
+  const allowedBlocksConfig = allowedBlocks
+    ? pickBy(blocksConfig, (value, key) => allowedBlocks.includes(key))
+    : blocksConfig;
   const schema = AccordionBlockSchema({ intl });
   return (
     <>

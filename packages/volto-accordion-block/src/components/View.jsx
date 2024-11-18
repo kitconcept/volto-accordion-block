@@ -31,8 +31,8 @@ const View = (props) => {
   const metadata = props.metadata || props.properties;
   const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
 
-  const [activeIndex, setActiveIndex] = React.useState([0]);
-  const [activePanel, setActivePanel] = React.useState([0]);
+  const [activeIndex, setActiveIndex] = React.useState([]);
+  const [activePanel, setActivePanel] = React.useState([]);
 
   const query = useQuery(location);
   const activePanels = query.get('activeAccordion')?.split(',');

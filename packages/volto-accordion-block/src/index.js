@@ -1,25 +1,9 @@
 import accordionSVG from '@plone/volto/icons/circle-bottom.svg';
-import imagesSVG from '@plone/volto/icons/images.svg';
-import TestimonialIcon from '@plone/volto/icons/quote.svg';
 import Edit from './components/Edit';
 import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
-
-//FHNW Blocks
-import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter.js';
-import ImageSliderEdit from '@fhnw/components/ImageSlider/Edit.jsx';
-import ImageSliderView from '@fhnw/components/ImageSlider/View.jsx';
-import {
-  NewsletterView,
-  NewsletterEdit,
-  newsletterSVG,
-} from '@fhnw/components/Blocks/Newsletter';
-import {
-  TestimonialsView,
-  TestimonialsEdit,
-} from '@fhnw/components/Blocks/Testimonial';
 
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 
@@ -95,45 +79,6 @@ const applyConfig = (config) => {
       addPermission: [],
       view: [],
     },
-  };
-
-  //Allowed blocks inside the accordion block.
-  //Newsletter
-  config.blocks.blocksConfig.newsletter = {
-    id: 'newsletter',
-    title: 'Newsletter (CleverReach)',
-    icon: newsletterSVG,
-    group: 'content',
-    view: NewsletterView,
-    edit: NewsletterEdit,
-    restricted: false,
-    mostUsed: false,
-  };
-  //Testimonial
-  config.blocks.blocksConfig.testimonial = {
-    id: 'testimonial',
-    title: 'Testimonial',
-    icon: TestimonialIcon,
-    group: 'content',
-    view: TestimonialsView,
-    edit: TestimonialsEdit,
-    restricted: false,
-    sidebarTab: 1,
-    enableStyling: false,
-  };
-  //ImageSlider
-  config.blocks.blocksConfig.imageslider = {
-    id: 'imageslider',
-    title: 'Bildergalerie',
-    icon: imagesSVG,
-    group: 'media',
-    view: ImageSliderView,
-    edit: ImageSliderEdit,
-    dataAdapter: ImageSliderDataAdapter,
-    restricted: false,
-    mostUsed: true,
-    sidebarTab: 1,
-    enableStyling: false,
   };
   return config;
 };
