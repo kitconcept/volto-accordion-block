@@ -17,6 +17,7 @@ const addonAliases = Object.keys(registry.packages).map((o) => [
   o,
   registry.packages[o].modulePath,
 ]);
+
 module.exports = {
   extends: `${coreLocation}/packages/volto/.eslintrc`,
   rules: {
