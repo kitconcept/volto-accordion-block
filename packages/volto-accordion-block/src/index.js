@@ -6,6 +6,8 @@ import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
+
+//FHNW Blocks
 import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter.js';
 import ImageSliderEdit from '@fhnw/components/ImageSlider/Edit.jsx';
 import ImageSliderView from '@fhnw/components/ImageSlider/View.jsx';
@@ -18,6 +20,7 @@ import {
   TestimonialsView,
   TestimonialsEdit,
 } from '@fhnw/components/Blocks/Testimonial';
+
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 
 const messages = defineMessages({
