@@ -6,9 +6,9 @@ import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
-import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter';
-import ImageSliderEdit from '@fhnw/components/ImageSlider/Edit';
-import ImageSliderView from '@fhnw/components/ImageSlider/View';
+import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter.js';
+import ImageSliderEdit from '@fhnw/components/ImageSlider/Edit.jsx';
+import ImageSliderView from '@fhnw/components/ImageSlider/View.jsx';
 import {
   NewsletterView,
   NewsletterEdit,
@@ -43,7 +43,7 @@ const extendedSchema = (config) => {
       if (config.blocks.blocksConfig[key]?.restricted) {
         return false;
       } else {
-        const title = config.blocks.blocksConfig[key]?.title || key;
+        // const title = config.blocks.blocksConfig[key]?.title || key;
         return key;
       }
     })
