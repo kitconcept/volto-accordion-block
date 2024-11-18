@@ -33,7 +33,6 @@ module.exports = {
             '@kitconcept/volto-accordion-block',
             './packages/volto-accordion-block/src',
           ],
-
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
