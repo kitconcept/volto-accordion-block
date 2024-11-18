@@ -33,11 +33,11 @@ const AccordionEdit = (props) => {
   const intl = useIntl();
 
   const handleClick = (e, itemProps) => {
-    // // If the title was clicked, bail out, let the event bubble.
+    // If the title was clicked, bail out, let the event bubble.
     if (e.preventToggle) {
       return;
     }
-    // // Do not stop propagation, bubbling is needed for the editor to select the block.
+    // Do not stop propagation, bubbling is needed for the editor to select the block.
     const { index } = itemProps;
     if (non_exclusive) {
       const newIndex =

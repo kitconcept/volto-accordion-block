@@ -30,8 +30,8 @@ const extendedSchema = (config) => {
       if (config.blocks.blocksConfig[key]?.restricted) {
         return false;
       } else {
-        // const title = config.blocks.blocksConfig[key]?.title || key;
-        return key;
+        const title = config.blocks.blocksConfig[key]?.title || key;
+        return [key, title];
       }
     })
     .filter((val) => !!val);
