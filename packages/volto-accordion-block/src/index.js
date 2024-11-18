@@ -9,7 +9,7 @@ import PanelsWidget from './components/Widgets/PanelsWidget';
 
 //FHNW Blocks
 import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter.js';
-import ImageSliderEdit from 'volto-fhnw-web25-base/components/ImageSlider/Edit';
+import ImageSliderEdit from 'volto-fhnw-web25-base/components/ImageSlider/Edit.js';
 import ImageSliderView from '@fhnw/components/ImageSlider/View.jsx';
 import {
   NewsletterView,

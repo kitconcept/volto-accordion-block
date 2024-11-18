@@ -29,7 +29,10 @@ module.exports = {
         map: [
           ['@plone/volto', `${coreLocation}/packages/volto/src`],
           ['@plone/volto-slate', `${coreLocation}/packages/volto-slate/src`],
-          ['volto-fhnw-web25-base', './packages/volto-fhnw-web25-base/src'],
+          [
+            'volto-fhnw-web25-base',
+            `${coreLocation}/packages/volto-fhnw-web25-base/src`,
+          ],
           ['@plone/registry', `${coreLocation}/packages/registry/src`],
           [
             '@kitconcept/volto-accordion-block',
