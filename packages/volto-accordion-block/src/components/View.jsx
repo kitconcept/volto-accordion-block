@@ -3,21 +3,33 @@ import { getPanels, accordionBlockHasValue } from './util';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { useLocation, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-import { RenderBlocks, Icon } from '@plone/volto/components';
-
-import rightSVG from '@plone/volto/icons/right-key.svg';
+import { RenderBlocks } from '@plone/volto/components';
+import config from '@plone/volto/registry';
+import { defineMessages, useIntl } from 'react-intl';
 
 const useQuery = (location) => {
   const { search } = location;
   return React.useMemo(() => new URLSearchParams(search), [search]);
 };
+const messages = defineMessages({
+  Open: {
+    id: 'Open',
+    defaultMessage: 'Show less information',
+  },
+  Close: {
+    id: 'Close',
+    defaultMessage: 'Show more information',
+  },
+});
 
 const View = (props) => {
   const { data, className } = props;
+  const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
   const panels = getPanels(data.data);
   const metadata = props.metadata || props.properties;
+  const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
 
   const [activeIndex, setActiveIndex] = React.useState([]);
   const [activePanel, setActivePanel] = React.useState([]);
@@ -44,14 +56,14 @@ const View = (props) => {
     const { index, id } = itemProps;
     const newIndex =
       activeIndex.indexOf(index) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activeIndex, index]
           : [index]
         : activeIndex.filter((item) => item !== index);
 
     const newPanel =
       activePanel.indexOf(id) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activePanel, id]
           : [id]
         : activePanel.filter((item) => item !== id);
@@ -105,6 +117,11 @@ const View = (props) => {
               role="button"
               tabIndex={0}
               aria-expanded={isActive}
+              title={
+                isActive
+                  ? intl.formatMessage(messages.Open)
+                  : intl.formatMessage(messages.Close)
+              }
             >
               <div className="accordion-title">{panel?.title}</div>
             </div>
