@@ -6,18 +6,18 @@ import View from './components/View';
 import layoutSchema from './components/LayoutSchema';
 import { AccordionStylingSchema } from './components/schema';
 import PanelsWidget from './components/Widgets/PanelsWidget';
-import { ImageSliderDataAdapter } from 'volto-fhnw-web25-base/components/ImageSlider/adapter';
-import ImageSliderEdit from 'volto-fhnw-web25-base/components/ImageSlider/Edit';
-import ImageSliderView from 'volto-fhnw-web25-base/components/ImageSlider/View';
+import { ImageSliderDataAdapter } from '@fhnw/components/ImageSlider/adapter';
+import ImageSliderEdit from '@fhnw/components/ImageSlider/Edit';
+import ImageSliderView from '@fhnw/components/ImageSlider/View';
 import {
   NewsletterView,
   NewsletterEdit,
   newsletterSVG,
-} from 'volto-fhnw-web25-base/components/Blocks/Newsletter';
+} from '@fhnw/components/Blocks/Newsletter';
 import {
   TestimonialsView,
   TestimonialsEdit,
-} from 'volto-fhnw-web25-base/components/Blocks/Testimonial';
+} from '@fhnw/components/Blocks/Testimonial';
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 
 const messages = defineMessages({
