@@ -61,6 +61,11 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#. Default: "Accordion"
+#: components/schema
+msgid "Add Button Label"
+msgstr ""
+
 #. Default: "Allow multiple panels open at a time"
 #: components/schema
 msgid "Allow multiple panels open at a time"
@@ -308,6 +313,11 @@ msgstr ""
 #. Default: "Unknown Block {block}"
 #: components/EditBlockWrapper
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Add Accordion"
+#: components/schema
+msgid "addButton"
 msgstr ""
 
 #. Default: "Add block in position"

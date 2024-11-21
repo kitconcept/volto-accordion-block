@@ -50,10 +50,7 @@ const PanelsWidget = (props) => {
           <Button
             compact
             icon
-            aria-label={
-              objectSchema.addMessage ||
-              `${intl.formatMessage(messages.add)} ${objectSchema.title}`
-            }
+            aria-label={objectSchema.addMessage || `${objectSchema.title} `}
             onClick={() => {
               const [newId, newData] = empty();
               onChange(id, {
@@ -72,8 +69,7 @@ const PanelsWidget = (props) => {
             <Icon name={addSVG} size="18px" />
             &nbsp;
             {/* Custom addMessage in schema, else default to english */}
-            {objectSchema.addMessage ||
-              `${intl.formatMessage(messages.add)} ${objectSchema.title}`}
+            {objectSchema.addMessage || `${objectSchema.title} `}
           </Button>
         </div>
       </FormFieldWrapper>

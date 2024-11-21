@@ -32,7 +32,7 @@ msgstr ""
 #: components/Edit
 #: components/schema
 msgid "Accordion block"
-msgstr "Akkordeon block"
+msgstr "Akkordeon"
 
 #. Default: "Accordion block settings"
 #: components/LayoutSchema
@@ -53,6 +53,11 @@ msgstr ""
 #: components/Widgets/PanelsWidget
 msgid "Add"
 msgstr ""
+
+#. Default: "Accordion"
+#: components/schema
+msgid "Add Button Label"
+msgstr "Akkordeonelemente"
 
 #. Default: "Allow multiple panels open at a time"
 #: components/schema
@@ -302,6 +307,11 @@ msgstr ""
 #: components/EditBlockWrapper
 msgid "Unknown Block"
 msgstr ""
+
+#. Default: "Add Accordion"
+#: components/schema
+msgid "addButton"
+msgstr "Akkordeonelement hinzufügen"
 
 #. Default: "Add block in position"
 #: components/NewBlockAddButton
