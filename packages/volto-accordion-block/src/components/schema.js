@@ -7,6 +7,10 @@ const messages = defineMessages({
     id: 'Accordion',
     defaultMessage: 'Accordion',
   },
+  AddButtonLabel: {
+    id: 'Add Button Label',
+    defaultMessage: 'Accordion',
+  },
   Options: {
     id: 'Options',
     defaultMessage: 'Options',
@@ -21,7 +25,7 @@ const messages = defineMessages({
   },
   AccordionBlock: {
     id: 'Accordion block',
-    defaultMessage: 'Accordion block',
+    defaultMessage: 'Accordion',
   },
   Heading2: {
     id: 'Heading 2',
@@ -103,11 +107,15 @@ const messages = defineMessages({
     id: 'Headline',
     defaultMessage: 'Headline',
   },
+  addButton: {
+    id: 'addButton',
+    defaultMessage: 'Add Accordion',
+  },
 });
 
 export const AccordionSchema = (intl) => {
   return {
-    title: intl.formatMessage(messages.Accordion),
+    title: intl.formatMessage(messages.addButton),
     fieldsets: [
       {
         id: 'default',
@@ -156,7 +164,7 @@ export const AccordionBlockSchema = ({ intl }) => ({
       type: 'string',
     },
     data: {
-      title: intl.formatMessage(messages.Accordion),
+      title: intl.formatMessage(messages.AddButtonLabel),
       type: 'panels',
       schema: AccordionSchema(intl),
     },

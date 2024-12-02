@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-11-15T08:23:24.184Z\n"
+"POT-Creation-Date: 2024-11-21T12:57:01.777Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -54,6 +54,11 @@ msgstr ""
 #. Default: "Add"
 #: components/Widgets/PanelsWidget
 msgid "Add"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/schema
+msgid "Add Button Label"
 msgstr ""
 
 #. Default: "Allow multiple panels open at a time"
@@ -303,6 +308,11 @@ msgstr ""
 #. Default: "Unknown Block {block}"
 #: components/EditBlockWrapper
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Add Accordion"
+#: components/schema
+msgid "addButton"
 msgstr ""
 
 #. Default: "Add block in position"
