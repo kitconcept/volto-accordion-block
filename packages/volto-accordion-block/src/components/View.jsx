@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { getPanels, accordionBlockHasValue } from './util';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { useLocation, useHistory } from 'react-router-dom';
@@ -30,12 +30,19 @@ const View = (props) => {
   const panels = getPanels(data.data);
   const metadata = props.metadata || props.properties;
   const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
-
-  const [activeIndex, setActiveIndex] = React.useState([]);
-  const [activePanel, setActivePanel] = React.useState([]);
-
   const query = useQuery(location);
-  const activePanels = query.get('activeAccordion')?.split(',');
+  const activePanels =
+    query.get('activeAccordion')?.split(',').filter(Boolean) ?? [];
+  const initialActiveIndex = panels.reduce((acc, [panelId], index) => {
+    if (activePanels.includes(panelId)) {
+      acc.push(index);
+    }
+    return acc;
+  }, []);
+
+  const [activeIndex, setActiveIndex] = React.useState(initialActiveIndex);
+  const [activePanel, setActivePanel] = React.useState(activePanels);
+
   const [firstIdFromPanels] = panels[0] || null;
 
   const activePanelsRef = React.useRef(activePanels);
@@ -84,20 +91,39 @@ const View = (props) => {
     }
   };
 
-  React.useEffect(() => {
-    if (data.collapsed) {
-      setActivePanel(activePanelsRef.current || []);
-    } else {
-      if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
-        setActivePanel(activePanelsRef.current || []);
-      } else {
-        setActivePanel([
-          firstIdFromPanelsRef.current,
-          ...(activePanelsRef.current || []),
-        ]);
-      }
+  // Removing because of the issue selecting the first panel. But why we are selcting it is not clear to me.
+  // Also we are not using data.collapsed in fhnw.
+
+  // React.useEffect(() => {
+  //   if (data.collapsed) {
+  //     setActivePanel(activePanelsRef.current || []);
+  //   } else {
+  //     if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
+  //       setActivePanel(activePanelsRef.current || []);
+  //     } else {
+  //       setActivePanel([
+  //         firstIdFromPanelsRef.current,
+  //         ...(activePanelsRef.current || []),
+  //       ]);
+  //     }
+  //   }
+  // }, [data.collapsed]);
+
+  // Scroll into view the first active(Open) panel.
+  const hasScrolledRef = useRef(false);
+  useEffect(() => {
+    if (hasScrolledRef.current) return;
+
+    const firstVisible = activePanels.find((panelId) =>
+      document.getElementById(panelId),
+    );
+    if (firstVisible) {
+      document
+        .getElementById(firstVisible)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      hasScrolledRef.current = true;
     }
-  }, [data.collapsed]);
+  }, []);
 
   return (
     <div className={cx('block accordionBlock', className)}>
