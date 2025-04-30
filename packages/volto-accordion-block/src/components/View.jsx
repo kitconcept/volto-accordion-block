@@ -45,8 +45,9 @@ const View = (props) => {
 
   const [firstIdFromPanels] = panels[0] || null;
 
-  const activePanelsRef = React.useRef(activePanels);
-  const firstIdFromPanelsRef = React.useRef(firstIdFromPanels);
+  // we are not using it now.
+  // const activePanelsRef = React.useRef(activePanels);
+  // const firstIdFromPanelsRef = React.useRef(firstIdFromPanels);
 
   const addQueryParam = (key, value) => {
     const searchParams = new URLSearchParams(location.search);
@@ -123,6 +124,7 @@ const View = (props) => {
         ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       hasScrolledRef.current = true;
     }
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   return (
