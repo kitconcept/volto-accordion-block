@@ -43,9 +43,8 @@ const View = (props) => {
   const [activeIndex, setActiveIndex] = React.useState(initialActiveIndex);
   const [activePanel, setActivePanel] = React.useState(activePanels);
 
-  const [firstIdFromPanels] = panels[0] || null;
-
   // we are not using it now.
+  // const [firstIdFromPanels] = panels[0] || null;
   // const activePanelsRef = React.useRef(activePanels);
   // const firstIdFromPanelsRef = React.useRef(firstIdFromPanels);
 
