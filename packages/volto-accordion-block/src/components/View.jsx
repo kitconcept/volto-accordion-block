@@ -111,7 +111,7 @@ const View = (props) => {
   }, []);
 
   React.useEffect(() => {
-    if (data.collapsed) {
+    if (!data.collapsed) {
       setActivePanel(activePanelsRef.current || []);
     } else {
       if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
