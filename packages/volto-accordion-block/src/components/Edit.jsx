@@ -301,6 +301,7 @@ const Edit = (props) => {
             title={data.placeholder}
             description={instructions}
             manage={manage}
+            isMainForm={false}
             blocksConfig={allowedBlocksConfig}
             metadata={metadata}
             properties={isEmpty(panel) ? emptyBlocksForm() : panel}
