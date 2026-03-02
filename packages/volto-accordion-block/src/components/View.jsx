@@ -84,8 +84,34 @@ const View = (props) => {
     }
   };
 
+  const isExclusive = (id) => {
+    return activePanel.includes(id);
+  };
+
+  // Scroll into view the last active(Open) panel.
+  const hasScrolledRef = React.useRef(false);
   React.useEffect(() => {
-    if (data.collapsed) {
+    if (hasScrolledRef.current) return;
+
+    const timeout = setTimeout(() => {
+      const firstVisible = [...(activePanels ?? [])]
+        .reverse()
+        .find((panelId) => document.getElementById(panelId));
+
+      if (firstVisible) {
+        document
+          .getElementById(firstVisible)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        hasScrolledRef.current = true;
+      }
+    }, 300);
+
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    if (!data.collapsed) {
       setActivePanel(activePanelsRef.current || []);
     } else {
       if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
@@ -103,7 +129,7 @@ const View = (props) => {
     <div className={cx('block accordionBlock', className)}>
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       {panels.map(([id, panel], index) => {
-        const isActive = activeIndex.includes(index);
+        const isActive = isExclusive(id);
         return accordionBlockHasValue(panel) ? (
           <div
             key={id}
