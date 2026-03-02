@@ -3,21 +3,33 @@ import { getPanels, accordionBlockHasValue } from './util';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { useLocation, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-import { RenderBlocks, Icon } from '@plone/volto/components';
-
-import rightSVG from '@plone/volto/icons/right-key.svg';
+import { RenderBlocks } from '@plone/volto/components';
+import config from '@plone/volto/registry';
+import { defineMessages, useIntl } from 'react-intl';
 
 const useQuery = (location) => {
   const { search } = location;
   return React.useMemo(() => new URLSearchParams(search), [search]);
 };
+const messages = defineMessages({
+  Open: {
+    id: 'Open',
+    defaultMessage: 'Show less information',
+  },
+  Close: {
+    id: 'Close',
+    defaultMessage: 'Show more information',
+  },
+});
 
 const View = (props) => {
   const { data, className } = props;
+  const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
   const panels = getPanels(data.data);
   const metadata = props.metadata || props.properties;
+  const non_exclusive = config.blocks?.blocksConfig?.accordion?.non_exclusive;
 
   const [activeIndex, setActiveIndex] = React.useState([]);
   const [activePanel, setActivePanel] = React.useState([]);
@@ -44,14 +56,14 @@ const View = (props) => {
     const { index, id } = itemProps;
     const newIndex =
       activeIndex.indexOf(index) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activeIndex, index]
           : [index]
         : activeIndex.filter((item) => item !== index);
 
     const newPanel =
       activePanel.indexOf(id) === -1
-        ? data.non_exclusive
+        ? non_exclusive
           ? [...activePanel, id]
           : [id]
         : activePanel.filter((item) => item !== id);
@@ -72,8 +84,34 @@ const View = (props) => {
     }
   };
 
+  const isExclusive = (id) => {
+    return activePanel.includes(id);
+  };
+
+  // Scroll into view the last active(Open) panel.
+  const hasScrolledRef = React.useRef(false);
   React.useEffect(() => {
-    if (data.collapsed) {
+    if (hasScrolledRef.current) return;
+
+    const timeout = setTimeout(() => {
+      const firstVisible = [...(activePanels ?? [])]
+        .reverse()
+        .find((panelId) => document.getElementById(panelId));
+
+      if (firstVisible) {
+        document
+          .getElementById(firstVisible)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        hasScrolledRef.current = true;
+      }
+    }, 300);
+
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    if (!data.collapsed) {
       setActivePanel(activePanelsRef.current || []);
     } else {
       if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
@@ -88,28 +126,32 @@ const View = (props) => {
   }, [data.collapsed]);
 
   return (
-    <div className={cx('block accordion', className)}>
+    <div className={cx('block accordionBlock', className)}>
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       {panels.map(([id, panel], index) => {
-        const isActive = activeIndex.includes(index);
+        const isActive = isExclusive(id);
         return accordionBlockHasValue(panel) ? (
-          <div key={id} id={id} className={'accordion-item'}>
+          <div
+            key={id}
+            id={id}
+            className={cx('accordion', isActive ? 'open' : '')}
+          >
             <div
-              className={cx('accordion-title')}
+              className={cx('accordion-header')}
               onClick={() => handleClick({ index, id })}
               onKeyDown={(e) => handleKeyPress(e, index, id)}
               role="button"
               tabIndex={0}
               aria-expanded={isActive}
+              title={
+                isActive
+                  ? intl.formatMessage(messages.Open)
+                  : intl.formatMessage(messages.Close)
+              }
             >
-              <span>{panel?.title}</span>
-              <Icon
-                className={cx(isActive ? 'open' : '')}
-                name={rightSVG}
-                size="20px"
-              />
+              <div className="accordion-title">{panel?.title}</div>
             </div>
-            <div className={cx('content-wrapper', isActive ? 'open' : '')}>
+            <div className={cx('accordion-body', isActive ? 'open' : '')}>
               <div className="accordion-content">
                 <RenderBlocks
                   {...props}

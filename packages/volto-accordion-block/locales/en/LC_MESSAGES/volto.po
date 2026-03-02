@@ -54,6 +54,11 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#. Default: "Accordion"
+#: components/schema
+msgid "Add Button Label"
+msgstr ""
+
 #. Default: "Allow multiple panels open at a time"
 #: components/schema
 msgid "Allow multiple panels open at a time"
@@ -67,6 +72,12 @@ msgstr ""
 #. Default: "Allowed blocks"
 #: components/LayoutSchema
 msgid "Allowed blocks"
+msgstr ""
+
+#. Default: "Show more information"
+#: components/AccordionEdit
+#: components/View
+msgid "Close"
 msgstr ""
 
 #. Default: "Collapsed by default"
@@ -205,6 +216,12 @@ msgstr ""
 msgid "Non exclusive"
 msgstr ""
 
+#. Default: "Show less information"
+#: components/AccordionEdit
+#: components/View
+msgid "Open"
+msgstr ""
+
 #. Default: "Options"
 #: components/schema
 msgid "Options"
@@ -289,6 +306,11 @@ msgstr ""
 #. Default: "Unknown Block {block}"
 #: components/EditBlockWrapper
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Add Accordion"
+#: components/schema
+msgid "addButton"
 msgstr ""
 
 #. Default: "Add block in position"
