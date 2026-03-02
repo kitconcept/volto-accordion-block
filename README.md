@@ -1,28 +1,42 @@
-# Volto Accordion Block
+# kitconcept accordion block (@kitconcept/volto-accordion-block)
 
-volto-accordion-block: Volto add-on that provides a  configurable accordion as a block.
+An accordion block for Plone frontend
 
 [![npm](https://img.shields.io/npm/v/@kitconcept/volto-accordion-block)](https://www.npmjs.com/package/@kitconcept/volto-accordion-block)
 [![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://kitconcept.github.io/volto-accordion-block/)
 [![Code analysis checks](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml)
 [![Unit tests](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml)
 
-![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
+## Features
 
-The Volto Accordion Block allows editors to add a configurable accordion to a volto page.
-
-## Screenshot
-
-*Coming soon...*
-
-## Screencast
-
-*Coming soon...*
+<!-- List your awesome features here -->
 
 ## Installation
 
 To install your project, you must choose the method appropriate to your version of Volto.
 
+
+### Volto 18 and later
+
+Add `@kitconcept/volto-accordion-block` to your `package.json`:
+
+```json
+"dependencies": {
+    "@kitconcept/volto-accordion-block": "*"
+}
+```
+
+Add `@kitconcept/volto-accordion-block` to your `volto.config.js`:
+
+```javascript
+const addons = ['@kitconcept/volto-accordion-block'];
+```
+
+If this package provides a Volto theme, and you want to activate it, then add the following to your `volto.config.js`:
+
+```javascript
+const theme = '@kitconcept/volto-accordion-block';
+```
 
 ### Volto 17 and earlier
 
@@ -58,28 +72,6 @@ Start volto with:
 yarn start
 ```
 
-### Volto 18 and later
-
-Add `@kitconcept/volto-accordion-block` to your `package.json`:
-
-```json
-"dependencies": {
-    "@kitconcept/volto-accordion-block": "*"
-}
-```
-
-Add `@kitconcept/volto-accordion-block` to your `volto.config.js`:
-
-```javascript
-const addons = ['@kitconcept/volto-accordion-block'];
-```
-
-If this package provides a Volto theme, and you want to activate it, then add the following to your `volto.config.js`:
-
-```javascript
-const theme = '@kitconcept/volto-accordion-block';
-```
-
 ## Test installation
 
 Visit http://localhost:3000/ in a browser, login, and check the awesome new features.
@@ -91,11 +83,29 @@ The development of this add-on is done in isolation using a new approach using p
 For this reason, it only works with pnpm and Volto 18 (currently in alpha).
 
 
-### Pre-requisites
+### Prerequisites ✅
 
--   [Node.js](https://6.docs.plone.org/install/create-project.html#node-js)
--   [Make](https://6.docs.plone.org/install/create-project.html#make)
--   [Docker](https://6.docs.plone.org/install/create-project.html#docker)
+-   An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned.
+-   [nvm](https://6.docs.plone.org/install/create-project-cookieplone.html#nvm)
+-   [Node.js and pnpm](https://6.docs.plone.org/install/create-project.html#node-js) 24
+-   [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
+-   [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
+-   [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
+
+### Installation 🔧
+
+1.  Clone this repository, then change your working directory.
+
+    ```shell
+    git clone git@github.com:kitconcept/volto-accordion-block.git
+    cd volto-accordion-block
+    ```
+
+2.  Install this code base.
+
+    ```shell
+    make install
+    ```
 
 
 ### Make convenience commands
@@ -206,6 +216,6 @@ make acceptance-test
 
 The project is licensed under the MIT license.
 
-## Credits and Acknowledgements 🙏
+## Credits and acknowledgements 🙏
 
-Crafted with care by **Generated using [Cookieplone (0.7.1)](https://github.com/plone/cookieplone) and [cookiecutter-plone (1749ce6)](https://github.com/plone/cookiecutter-plone/commit/1749ce6be0328f717f5d6b0dabd70d78d291cd0a) on 2024-09-10 10:06:14.898033**. A special thanks to all contributors and supporters!
+Generated using [Cookieplone (0.9.10)](https://github.com/plone/cookieplone) and [cookieplone-templates (7201cdd)](https://github.com/plone/cookieplone-templates/commit/7201cdd68c8b8a2f3c17be615e74353140ec31f2) on 2025-11-18 17:06:16.672256. A special thanks to all contributors and supporters!
