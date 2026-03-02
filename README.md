@@ -1,23 +1,19 @@
 # Volto Accordion Block
 
-volto-accordion-block: Volto add-on that provides a  configurable accordion as a block.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+</picture>
+
+volto-accordion-block: Volto add-on that provides a configurable accordion as a block.
 
 [![npm](https://img.shields.io/npm/v/@kitconcept/volto-accordion-block)](https://www.npmjs.com/package/@kitconcept/volto-accordion-block)
 [![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://kitconcept.github.io/volto-accordion-block/)
 [![Code analysis checks](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/code.yml)
 [![Unit tests](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-accordion-block/actions/workflows/unit.yml)
 
-![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
 
-The Volto Accordion Block allows editors to add a configurable accordion to a volto page.
-
-## Screenshot
-
-*Coming soon...*
-
-## Screencast
-
-*Coming soon...*
+This add-on is based on the [EEA Accordion Block](https://github.com/eea/volto-accordion-block). It has been slightly refactored to be compatible with VLT and Volto 18 before the EEA block is updated to be compatible with these.
 
 ## Installation
 
